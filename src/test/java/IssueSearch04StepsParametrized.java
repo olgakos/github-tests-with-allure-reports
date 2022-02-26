@@ -12,7 +12,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class IssueSearch03Steps {
+public class IssueSearch04StepsParametrized {
+    private static final String REPOSITORY = "olgakos/github-tests-with-allure-reports";
+    private static final String LINK_NAME = "Issues";
+
     @BeforeEach
     void preconditionBrowser() {
         browserSize = "1920x1080";
@@ -23,21 +26,21 @@ public class IssueSearch03Steps {
     }
 
     @Test
-    void issueSearchTest03Steps() {
+    void issueSearchTest04StepsParametrized() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Открыть главную страницу GitHub", () -> {
             open("https://github.com");
         });
-        step("Заполнить поле Поиск данными", () -> {
+        step("Заполнить поле Поиск данными: " + REPOSITORY, () -> {
             $(".header-search-input").click();
-            $(".header-search-input").sendKeys("olgakos/github-tests-with-allure-reports");
+            $(".header-search-input").sendKeys(REPOSITORY);
         });
         step("Нажать кнопку Поиск", () -> {
             $(".header-search-input").submit();
         });
-        step("Проверить, что на открывшейся стр. есть кнопка Issues", () -> {
-            $(By.partialLinkText("Issues")).should(Condition.exist);
+        step("Проверить, что на открывшейся стр. есть кнопка " + LINK_NAME, () -> {
+            $(By.partialLinkText(LINK_NAME)).should(Condition.exist);
         });
     }
 }
