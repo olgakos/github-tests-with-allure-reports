@@ -51,16 +51,8 @@ public class IssueSearch05WebSteps {
 
 //класс2: тестовый
 
-    class IssueSearch05WebStepsTest {
+    class IssueSearch05WebStepsTest extends BaseTest {
 
-        @BeforeEach
-        void preconditionBrowser() {
-            browserSize = "1920x1080";
-        }
-        @AfterEach
-        void closeBrowser() {
-            Selenide.closeWebDriver();
-        }
         @Test
         void issueSearchTest05WebSteps() {
 

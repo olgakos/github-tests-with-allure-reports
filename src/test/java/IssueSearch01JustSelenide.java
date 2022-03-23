@@ -10,16 +10,7 @@ import static com.codeborne.selenide.Configuration.browserSize;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class IssueSearch01JustSelenide {
-
-    @BeforeEach
-    void preconditionBrowser() {
-        browserSize = "1920x1080";
-    }
-    @AfterEach
-    void closeBrowser() {
-        Selenide.closeWebDriver();
-    }
+public class IssueSearch01JustSelenide extends BaseTest {
 
     @Test
     void issueSearchTest01JustSelenide() {

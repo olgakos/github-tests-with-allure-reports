@@ -12,15 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class IssueSearch03Steps {
-    @BeforeEach
-    void preconditionBrowser() {
-        browserSize = "1920x1080";
-    }
-    @AfterEach
-    void closeBrowser() {
-        Selenide.closeWebDriver();
-    }
+public class IssueSearch03Steps extends BaseTest {
 
     @Test
     void issueSearchTest03Steps() {
