@@ -12,18 +12,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class IssueSearch04StepsParametrized {
+public class IssueSearch04StepsParametrized extends BaseTest {
     private static final String REPOSITORY = "olgakos/github-tests-with-allure-reports";
     private static final String LINK_NAME = "Issues";
-
-    @BeforeEach
-    void preconditionBrowser() {
-        browserSize = "1920x1080";
-    }
-    @AfterEach
-    void closeBrowser() {
-        Selenide.closeWebDriver();
-    }
 
     @Test
     void issueSearchTest04StepsParametrized() {
